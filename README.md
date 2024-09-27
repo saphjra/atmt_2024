@@ -87,6 +87,7 @@ python translate.py \
 Postprocess model translations
 ```
 bash scripts/postprocess.sh path/to/output/file/model/translations path/to/postprocessed/model/translations/file en
+scripts/postprocess.sh  assignments/01/baseline/infopankki_translations.txt assignments/01/baseline/postprocess.txt
 ```
 
 Score with SacreBLEU
