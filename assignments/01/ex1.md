@@ -99,4 +99,9 @@ translated differently into English depending on the context and provide example
 do your examples fit into the discussion of in-domain vs. out-of-domain? Can you think
 of a possible way to ensure a specific translation for a word is used by an NMT mode
 
-Hausbank: can either mean a bench beloning to a house, or the bank (money institution) of ones trust,  which could be translate for example as local bank, or main bank. A model trained on data of a financal realted domain, such as bank report e.g. will learn to translate it, as the second meaning, and probably wrongly translate it on out-of-domain text. 
+Neigung: can mean several things without further context: tendency, inclination, slope, disposition.
+laufen: is a very generic verb in german; can have several translations: walk, run, (does are probably similarly interchangable in english as in german) but there are also more domain specific transaltions like: being in progress (Die Aufnahme läuft; the recoring is in progress), work (Der Moror läuft mit voller Kapazität; The motor works at full capacity),  go (Alles läuft nach Plan: Everything goes according to plan) and probably more. 
+Hausbank: can either mean a bench beloning to a house, or the bank (money institution) of ones trust,  which could be translate for example as local bank, or main bank. 
+A model trained on data of one domain, will probably learn a to narrow representation of the above mentiont wors, and therefore translate them wrongly in an out-of domain setting. For example a model trained on data related to motor sports might learn to translate laufen as work, which does not make sense in most other out-of-domain transaltion tasks. 
+
+
