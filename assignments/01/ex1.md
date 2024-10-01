@@ -49,3 +49,48 @@ INFO: Epoch 061: valid_loss 2.68 | num_tokens 15.5 | batch_size 500 | valid_perp
 INFO: Epoch 062: loss 2.135 | lr 0.0003 | num_tokens 14.86 | batch_size 1 | grad_norm 64.5 | clip 0.9871                                                                                                                         
 INFO: Epoch 062: valid_loss 2.67 | num_tokens 15.5 | batch_size 500 | valid_perplexity 14.4
 INFO: No validation set improvements observed for 3 epochs. Early stop!
+assignments/01/baseline/infopankki_translations.p.txt \
+| sacrebleu data/en-sv/infopankki/raw/test.en
+{
+ "name": "BLEU",
+ "score": 13.5,
+ "signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.4.3",
+ "verbose_score": "32.9/16.3/9.8/6.3 (BP = 1.000 ratio = 1.548 hyp_len = 10766 ref_len = 6957)",
+ "nrefs": "1",
+ "case": "mixed",
+ "eff": "no",
+ "tok": "13a",
+ "smooth": "exp",
+ "version": "2.4.3"
+}
+{
+ "name": "BLEU",
+ "score": 0.6,
+ "signature": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.4.3",
+ "verbose_score": "17.5/2.1/0.2/0.0 (BP = 1.000 ratio = 1.340 hyp_len = 19578 ref_len = 14614)",
+ "nrefs": "1",
+ "case": "mixed",
+ "eff": "no",
+ "tok": "13a",
+ "smooth": "exp",
+ "version": "2.4.3"
+}
+
+| Domain       | BLEU Score | 1-gram Precision | 2-gram Precision | 3-gram Precision | 4-gram Precision |
+|--------------|------------|------------------|------------------|------------------|------------------|
+| In-domain    | 13.5       | 32.9%            | 16.3%            | 9.8%             | 6.3%             |
+| Out-of-domain| 0.6        | 17.5%            | 2.1%             | 0.2%             | 0.0%             |
+The BLEU score on the in-domain test set will be relatively high considering the model
+was trained on very little data. Take a look at the raw data sets. Which characteristics of
+the in-domain data could be responsible for a high BLEU score?
+In both sets of data, the sentences are relatively short, which is beneficial for the BLEU, additionlly both te ztrining nd test data contia
+
+• Compare the model’s performance on the in-domain test set vs. the out-of-domain test
+set. Why is the out-of-domain test set so much harder to translate? Support your answer
+with examples from the test set.
+
+
+• Choose a language other than English that you know well. Find 3 words that may be
+translated differently into English depending on the context and provide examples. How
+do your examples fit into the discussion of in-domain vs. out-of-domain? Can you think
+of a possible way to ensure a specific translation for a word is used by an NMT mode
