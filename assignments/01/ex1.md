@@ -85,15 +85,18 @@ assignments/01/baseline/infopankki_translations.p.txt \
 The BLEU score on the in-domain test set will be relatively high considering the model
 was trained on very little data. Take a look at the raw data sets. Which characteristics of
 the in-domain data could be responsible for a high BLEU score?
-In both the training and the validation set, the sentences are relatively short, which is beneficial for the BLEU, additionlly both contain a considerable amount of if sentence structures, which the model probably learned to predict. 
+In both the training and the validation set, the sentences are relatively short, which is beneficial for the BLEU, additionlly both contain a considerable amount of if sentences, whos structure the model probably learned to predict. 
 
 
 • Compare the model’s performance on the in-domain test set vs. the out-of-domain test
 set. Why is the out-of-domain test set so much harder to translate? Support your answer
 with examples from the test set.
 
+The bible text contains quite a lot unseen token, especieally the biblical names, which I guess are hard to predict for the model. Further more the english bible translation has very specific idiosyncrasies, both in the lexical and in the syntactical area. I can not judge to which extend they are present in the swedish version. 
 
 • Choose a language other than English that you know well. Find 3 words that may be
 translated differently into English depending on the context and provide examples. How
 do your examples fit into the discussion of in-domain vs. out-of-domain? Can you think
 of a possible way to ensure a specific translation for a word is used by an NMT mode
+
+Hausbank: can either mean a bench beloning to a house, or the bank (money institution) of ones trust,  which could be translate for example as local bank, or main bank. A model trained on data of a financal realted domain, such as bank report e.g. will learn to translate it, as the second meaning, and probably wrongly translate it on out-of-domain text. 
