@@ -80,10 +80,13 @@ assignments/01/baseline/infopankki_translations.p.txt \
 |--------------|------------|------------------|------------------|------------------|------------------|
 | In-domain    | 13.5       | 32.9%            | 16.3%            | 9.8%             | 6.3%             |
 | Out-of-domain| 0.6        | 17.5%            | 2.1%             | 0.2%             | 0.0%             |
+
+
 The BLEU score on the in-domain test set will be relatively high considering the model
 was trained on very little data. Take a look at the raw data sets. Which characteristics of
 the in-domain data could be responsible for a high BLEU score?
-In both sets of data, the sentences are relatively short, which is beneficial for the BLEU, additionlly both te ztrining nd test data contia
+In both the training and the validation set, the sentences are relatively short, which is beneficial for the BLEU, additionlly both contain a considerable amount of if sentence structures, which the model probably learned to predict. 
+
 
 • Compare the model’s performance on the in-domain test set vs. the out-of-domain test
 set. Why is the out-of-domain test set so much harder to translate? Support your answer
