@@ -97,11 +97,18 @@ The bible text contains quite a lot unseen token, especieally the biblical names
 • Choose a language other than English that you know well. Find 3 words that may be
 translated differently into English depending on the context and provide examples. How
 do your examples fit into the discussion of in-domain vs. out-of-domain? Can you think
-of a possible way to ensure a specific translation for a word is used by an NMT mode
+of a possible way to ensure a specific translation for a word is used by an NMT model
 
 Neigung: can mean several things without further context: tendency, inclination, slope, disposition.
 laufen: is a very generic verb in german; can have several translations: walk, run, (does are probably similarly interchangable in english as in german) but there are also more domain specific transaltions like: being in progress (Die Aufnahme läuft; the recoring is in progress), work (Der Moror läuft mit voller Kapazität; The motor works at full capacity),  go (Alles läuft nach Plan: Everything goes according to plan) and probably more. 
 Hausbank: can either mean a bench beloning to a house, or the bank (money institution) of ones trust,  which could be translate for example as local bank, or main bank. 
 A model trained on data of one domain, will probably learn a to narrow representation of the above mentiont wors, and therefore translate them wrongly in an out-of domain setting. For example a model trained on data related to motor sports might learn to translate laufen as work, which does not make sense in most other out-of-domain transaltion tasks. 
+
+To ensure specific translations one could try several strategies: 
+Train the model on enough and a variaty of data form differnet domains, such that it learns context dependend translations.
+Train a model for the specific use case, meaning if legal documents should be translate with the model, train it on text from this domain.
+Manipulate the models logit value, in such a way that domain related words get higher probabilities to be generate or the not domain related get low probs. 
+Provide the model with a dictoinaire predefining certain translations. 
+
 
 
