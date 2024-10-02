@@ -29,8 +29,8 @@ The Bible text contains a higher number of longer sentences.
 a large number of unseen tokens: (for example HERREN - LORD), and whereas proper nouns in the infopankki data just 
 stayed the same for the swedish and english text (Upper secondary school studies are aimed at the matriculation examination (ylioppilastutkinto) - Gymnasiestudierna siktar till studentexamen (ylioppilastutkinto)
 , biblical names sometimes have their own language specific representation, making it harder to predict: for example in english: Noah, Shem, ham, and Japheth 
-and in swedisch : Noa, Sem, Ham och Jafet
-which are likely difficult for the model to accomodate to.
+and in swedish : Noa, Sem, Ham och Jafet
+which are likely difficult for the model to accommodate to.
 Furthermore, the Bible has 
 very specific idiosyncrasies, both lexically and syntactically, which are not present in the in-domain data.
 For example: "This is the rejoicing city that dwelt carelessly, that said in her heart, I am, and there is none beside me: how is she become a desolation, a place for beasts to lie down in! every one that passeth by her shall hiss, and wag his hand."
@@ -60,7 +60,7 @@ Train the model on a large and diverse dataset from multiple domains so that it 
 Train the model for a specific use case, such as translating legal documents, by using domain-specific text.
 Manipulate the model’s logit values so that domain-relevant words have higher probabilities of being generated, while non-relevant terms have lower probabilities.
 Provide the model with a dictionary that predefines certain translations.
-When working with larger models like Chatgpt further strategies could promting the model to translate specific source words to specific target words. 
+When working with larger models like Chatgpt further strategies could be prompting the model to translate specific source words to specific target words. 
 
 ## Training output 
 INFO: Epoch 059: loss 2.155 | lr 0.0003 | num_tokens 14.86 | batch_size 1 | grad_norm 64.37 | clip 0.9875 
