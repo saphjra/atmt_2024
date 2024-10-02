@@ -86,39 +86,30 @@ The BLEU score on the in-domain test set will be relatively high considering the
 was trained on very little data. Take a look at the raw data sets. Which characteristics of
 the in-domain data could be responsible for a high BLEU score?
 
+The sentences are relatively short, which is beneficial for achieving higher BLEU scores. 
+Additionally, the in-domain dataset is fairly consistent in its sentence structures, primarily comprising main clauses 
+with "you" or nouns as subjects. When sentence structures are more complex, 
+they are mostly conditional sentences ("if" clauses). Furthermore, the beginning of one sentence is often repeated in 
+the following sentence, leading to similar sentence patterns throughout the data. All these factors, 
+combined with a more or less consistent vocabulary in both the test and training data, m
+ake it easier for the model to predict in-domain translations without generalizing well to other sources of text.
 
-The sentences are relatively short, which is beneficial for achiving higher blue scores. Additionally, the in-domain dataset Is fairly consistent with its sentences structures, boiling down to mostly main sentences and You or Nouns as subjects. When sentences structures are more complicated, they mostly are if sentences. Furthermore, the start of one Sentence is often repeteat in the following sentence, leading to similare senttence patters throughoout the data.  All those points plus a more or less consitent vocabulry for both test and trainings data,  make it easier for the model to predict in-domain translation based on the same text source, without generalizing well to textual data from other sources. 
 
 
 • Compare the model’s performance on the in-domain test set vs. the out-of-domain test
 set. Why is the out-of-domain test set so much harder to translate? Support your answer
 with examples from the test set.
 
-The bible text contains quite a lot unseen token, especieally the biblical names, which I guess are hard to predict for the model. Further more the english bible translation has very specific idiosyncrasies, both in the lexical and in the syntactical area. I can not judge to which extend they are present in the swedish version. 
+The Bible text contains a large number of unseen tokens, especially biblical names, 
+which are likely difficult for the model to predict. Furthermore, the English Bible translation has 
+very specific idiosyncrasies, both lexically and syntactically. I am unsure to what extent these are present in the Swedish version.
+
 
 • Choose a language other than English that you know well. Find 3 words that may be
 translated differently into English depending on the context and provide examples. How
 do your examples fit into the discussion of in-domain vs. out-of-domain? Can you think
 of a possible way to ensure a specific translation for a word is used by an NMT model
 
-Neigung: can mean several things without further context: tendency, inclination, slope, disposition.
-laufen: is a very generic verb in german; can have several translations: walk, run, (does are probably similarly interchangable in english as in german) but there are also more domain specific transaltions like: being in progress (Die Aufnahme läuft; the recoring is in progress), work (Der Moror läuft mit voller Kapazität; The motor works at full capacity),  go (Alles läuft nach Plan: Everything goes according to plan) and probably more. 
-Hausbank: can either mean a bench beloning to a house, or the bank (money institution) of ones trust,  which could be translate for example as local bank, or main bank. 
-A model trained on data of one domain, will probably learn a to narrow representation of the above mentiont wors, and therefore translate them wrongly in an out-of domain setting. For example a model trained on data related to motor sports might learn to translate laufen as work, which does not make sense in most other out-of-domain transaltion tasks. 
-
-To ensure specific translations one could try several strategies: 
-Train the model on enough and a variaty of data form differnet domains, such that it learns context dependend translations.
-Train a model for the specific use case, meaning if legal documents should be translate with the model, train it on text from this domain.
-Manipulate the models logit value, in such a way that domain related words get higher probabilities to be generate or the not domain related get low probs. 
-Provide the model with a dictoinaire predefining certain translations. 
-
-The sentences are relatively short, which is beneficial for achieving higher BLEU scores. Additionally, the in-domain dataset is fairly consistent in its sentence structures, primarily comprising main clauses with "you" or nouns as subjects. When sentence structures are more complex, they are mostly conditional sentences ("if" clauses). Furthermore, the beginning of one sentence is often repeated in the following sentence, leading to similar sentence patterns throughout the data. All these factors, combined with a more or less consistent vocabulary in both the test and training data, make it easier for the model to predict in-domain translations without generalizing well to other sources of text.
-
-Compare the model’s performance on the in-domain test set vs. the out-of-domain test set. Why is the out-of-domain test set so much harder to translate? Support your answer with examples from the test set.
-
-The Bible text contains a large number of unseen tokens, especially biblical names, which are likely difficult for the model to predict. Furthermore, the English Bible translation has very specific idiosyncrasies, both lexically and syntactically. I am unsure to what extent these are present in the Swedish version.
-
-Choose a language other than English that you know well. Find three words that may be translated differently into English depending on the context and provide examples. How do your examples fit into the discussion of in-domain vs. out-of-domain? Can you think of a possible way to ensure a specific translation for a word is used by an NMT model?
 
 Neigung: Depending on the context, this word can mean "tendency," "inclination," "slope," or "disposition."
 Laufen: A very generic verb in German, which can be translated as "walk" or "run." It also has domain-specific translations, such as "being in progress" (e.g., "Die Aufnahme läuft" = "The recording is in progress"), "work" (e.g., "Der Motor läuft mit voller Kapazität" = "The motor works at full capacity"), and "go" (e.g., "Alles läuft nach Plan" = "Everything goes according to plan").
@@ -131,4 +122,10 @@ Train the model on a large and diverse dataset from multiple domains so that it 
 Train the model for a specific use case, such as translating legal documents, by using domain-specific text.
 Manipulate the model’s logit values so that domain-relevant words have higher probabilities of being generated, while non-relevant terms have lower probabilities.
 Provide the model with a dictionary that predefines certain translations.
+
+
+
+
+
+
 
