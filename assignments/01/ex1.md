@@ -30,16 +30,19 @@ which are likely difficult for the model to predict. Furthermore, the English Bi
 very specific idiosyncrasies, both lexically and syntactically. I am unsure to what extent these are present in the Swedish version.
 
 
-### Context dependen translations
+### Context dependent translations
 Choose a language other than English that you know well. Find 3 words that may be
 translated differently into English depending on the context and provide examples. How
 do your examples fit into the discussion of in-domain vs. out-of-domain? Can you think
 of a possible way to ensure a specific translation for a word is used by an NMT model
 
 
-Neigung: Depending on the context, this word can mean "tendency," "inclination," "slope," or "disposition."
-Laufen: A very generic verb in German, which can be translated as "walk" or "run." It also has domain-specific translations, such as "being in progress" (e.g., "Die Aufnahme läuft" = "The recording is in progress"), "work" (e.g., "Der Motor läuft mit voller Kapazität" = "The motor works at full capacity"), and "go" (e.g., "Alles läuft nach Plan" = "Everything goes according to plan").
-Hausbank: This can either mean a bench belonging to a house or a trusted financial institution, which could be translated as "local bank" or "main bank."
+**Neigung**: Depending on the context, this word can mean "tendency," "inclination," "slope," or "disposition."
+
+**Laufen**: A very generic verb in German, which can be translated as "walk" or "run." It also has domain-specific translations, such as "being in progress" (e.g., "Die Aufnahme läuft" = "The recording is in progress"), "work" (e.g., "Der Motor läuft mit voller Kapazität" = "The motor works at full capacity"), and "go" (e.g., "Alles läuft nach Plan" = "Everything goes according to plan").
+
+**Hausbank**: This can either mean a bench belonging to a house or a trusted financial institution, which could be translated as "local bank" or "main bank."
+
 A model trained on data from a single domain will likely learn too narrow a representation of these words, leading to incorrect translations in an out-of-domain setting. For instance, a model trained on data related to motorsports might learn to translate "laufen" as "work," which would not make sense in most other contexts.
 
 To ensure specific translations, several strategies could be employed:
@@ -52,13 +55,21 @@ When working with larger models like Chatgpt further strategies could promting t
 
 ## Training output 
 INFO: Epoch 059: loss 2.155 | lr 0.0003 | num_tokens 14.86 | batch_size 1 | grad_norm 64.37 | clip 0.9875 
+
 INFO: Epoch 059: valid_loss 2.67 | num_tokens 15.5 | batch_size 500 | valid_perplexity 14.4
-INFO: Epoch 060: loss 2.144 | lr 0.0003 | num_tokens 14.86 | batch_size 1 | grad_norm 64.35 | clip 0.988                                                                                                                 
+
+INFO: Epoch 060: loss 2.144 | lr 0.0003 | num_tokens 14.86 | batch_size 1 | grad_norm 64.35 | clip 0.988      
+
 INFO: Epoch 060: valid_loss 2.68 | num_tokens 15.5 | batch_size 500 | valid_perplexity 14.6
-INFO: Epoch 061: loss 2.136 | lr 0.0003 | num_tokens 14.86 | batch_size 1 | grad_norm 64.4 | clip 0.987                                                                                                                          
+
+INFO: Epoch 061: loss 2.136 | lr 0.0003 | num_tokens 14.86 | batch_size 1 | grad_norm 64.4 | clip 0.987         
+
 INFO: Epoch 061: valid_loss 2.68 | num_tokens 15.5 | batch_size 500 | valid_perplexity 14.5
-INFO: Epoch 062: loss 2.135 | lr 0.0003 | num_tokens 14.86 | batch_size 1 | grad_norm 64.5 | clip 0.9871                                                                                                                         
+
+INFO: Epoch 062: loss 2.135 | lr 0.0003 | num_tokens 14.86 | batch_size 1 | grad_norm 64.5 | clip 0.9871         
+
 INFO: Epoch 062: valid_loss 2.67 | num_tokens 15.5 | batch_size 500 | valid_perplexity 14.4
+
 INFO: No validation set improvements observed for 3 epochs. Early stop!
 
 ## Sacrebleu  raw  Output 
