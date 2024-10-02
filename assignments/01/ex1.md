@@ -25,9 +25,15 @@ Compare the model’s performance on the in-domain test set vs. the out-of-domai
 set. Why is the out-of-domain test set so much harder to translate? Support your answer
 with examples from the test set.
 
-The Bible text contains a large number of unseen tokens, especially biblical names, 
+The Bible text contains a higher number of longer sentences. 
+a large number of unseen tokens: (for example HERREN - LORD), and whereas proper nouns in the infopankki data just stayed the same for the swedish and english text () , biblical names sometimes have their own language specific representation, making it harder to predict: for example in english: Noah, Shem, ham, and Japheth 
+and in swedisch : Noa, Sem, Ham och Jafet
+
 which are likely difficult for the model to predict. Furthermore, the English Bible translation has 
-very specific idiosyncrasies, both lexically and syntactically. I am unsure to what extent these are present in the Swedish version.
+very specific idiosyncrasies, both lexically and syntactically.:
+For example: 
+
+I am unsure to what extent these are present in the Swedish version.
 
 
 ### Context dependent translations
