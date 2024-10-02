@@ -30,8 +30,8 @@ a large number of unseen tokens: (for example HERREN - LORD), and whereas proper
 stayed the same for the swedish and english text (Upper secondary school studies are aimed at the matriculation examination (ylioppilastutkinto) - Gymnasiestudierna siktar till studentexamen (ylioppilastutkinto)
 , biblical names sometimes have their own language specific representation, making it harder to predict: for example in english: Noah, Shem, ham, and Japheth 
 and in swedisch : Noa, Sem, Ham och Jafet
-
-which are likely difficult for the model to predict. Furthermore, the Bible has 
+which are likely difficult for the model to accomodate to.
+Furthermore, the Bible has 
 very specific idiosyncrasies, both lexically and syntactically, which are not present in the in-domain data.
 For example: "This is the rejoicing city that dwelt carelessly, that said in her heart, I am, and there is none beside me: how is she become a desolation, a place for beasts to lie down in! every one that passeth by her shall hiss, and wag his hand."
 Note: use of the word "passeth" in this context is not common in everyday language, and the sentence structure is complex and archaic.
