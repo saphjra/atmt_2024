@@ -26,13 +26,16 @@ set. Why is the out-of-domain test set so much harder to translate? Support your
 with examples from the test set.
 
 The Bible text contains a higher number of longer sentences. 
-a large number of unseen tokens: (for example HERREN - LORD), and whereas proper nouns in the infopankki data just stayed the same for the swedish and english text () , biblical names sometimes have their own language specific representation, making it harder to predict: for example in english: Noah, Shem, ham, and Japheth 
+a large number of unseen tokens: (for example HERREN - LORD), and whereas proper nouns in the infopankki data just 
+stayed the same for the swedish and english text (Upper secondary school studies are aimed at the matriculation examination (ylioppilastutkinto) - Gymnasiestudierna siktar till studentexamen (ylioppilastutkinto)
+, biblical names sometimes have their own language specific representation, making it harder to predict: for example in english: Noah, Shem, ham, and Japheth 
 and in swedisch : Noa, Sem, Ham och Jafet
 
-which are likely difficult for the model to predict. Furthermore, the English Bible translation has 
-very specific idiosyncrasies, both lexically and syntactically.:
-For example: 
-
+which are likely difficult for the model to predict. Furthermore, the Bible has 
+very specific idiosyncrasies, both lexically and syntactically, which are not present in the in-domain data.
+For example: "This is the rejoicing city that dwelt carelessly, that said in her heart, I am, and there is none beside me: how is she become a desolation, a place for beasts to lie down in! every one that passeth by her shall hiss, and wag his hand."
+Note: use of the word "passeth" in this context is not common in everyday language, and the sentence structure is complex and archaic.
+Such idiosyncrasies are likely to be present throughout the Bible text, making it challenging for the model to generate accurate translations.
 I am unsure to what extent these are present in the Swedish version.
 
 
@@ -79,8 +82,7 @@ INFO: Epoch 062: valid_loss 2.67 | num_tokens 15.5 | batch_size 500 | valid_perp
 INFO: No validation set improvements observed for 3 epochs. Early stop!
 
 ## Sacrebleu  raw  Output 
-assignments/01/baseline/infopankki_translations.p.txt \
-| sacrebleu data/en-sv/infopankki/raw/test.en
+
 {
  "name": "BLEU",
  "score": 13.5,
@@ -93,6 +95,8 @@ assignments/01/baseline/infopankki_translations.p.txt \
  "smooth": "exp",
  "version": "2.4.3"
 }
+
+
 {
  "name": "BLEU",
  "score": 0.6,
