@@ -87,7 +87,7 @@ was trained on very little data. Take a look at the raw data sets. Which charact
 the in-domain data could be responsible for a high BLEU score?
 
 
-The sentences are relatively short, which is beneficial for achiving higher blue scores. Additionally, the in-domain dataset Is fairly consistent with its sentences structures, boiling down to mostly main sentences and You or proper Nouns as subjcet. When sentences structures are more compicated, they mostly are if sentences. Furthermore, the start of one Sentence is often repeteat in the next sentence.  All those points make it easier for the model to predict in-domain translation based on the same text source, without generalizing well to textual data from other sources. 
+The sentences are relatively short, which is beneficial for achiving higher blue scores. Additionally, the in-domain dataset Is fairly consistent with its sentences structures, boiling down to mostly main sentences and You or Nouns as subjects. When sentences structures are more complicated, they mostly are if sentences. Furthermore, the start of one Sentence is often repeteat in the following sentence, leading to similare senttence patters throughoout the data.  All those points plus a more or less consitent vocabulry for both test and trainings data,  make it easier for the model to predict in-domain translation based on the same text source, without generalizing well to textual data from other sources. 
 
 
 • Compare the model’s performance on the in-domain test set vs. the out-of-domain test
@@ -112,5 +112,23 @@ Train a model for the specific use case, meaning if legal documents should be tr
 Manipulate the models logit value, in such a way that domain related words get higher probabilities to be generate or the not domain related get low probs. 
 Provide the model with a dictoinaire predefining certain translations. 
 
+The sentences are relatively short, which is beneficial for achieving higher BLEU scores. Additionally, the in-domain dataset is fairly consistent in its sentence structures, primarily comprising main clauses with "you" or nouns as subjects. When sentence structures are more complex, they are mostly conditional sentences ("if" clauses). Furthermore, the beginning of one sentence is often repeated in the following sentence, leading to similar sentence patterns throughout the data. All these factors, combined with a more or less consistent vocabulary in both the test and training data, make it easier for the model to predict in-domain translations without generalizing well to other sources of text.
 
+Compare the model’s performance on the in-domain test set vs. the out-of-domain test set. Why is the out-of-domain test set so much harder to translate? Support your answer with examples from the test set.
+
+The Bible text contains a large number of unseen tokens, especially biblical names, which are likely difficult for the model to predict. Furthermore, the English Bible translation has very specific idiosyncrasies, both lexically and syntactically. I am unsure to what extent these are present in the Swedish version.
+
+Choose a language other than English that you know well. Find three words that may be translated differently into English depending on the context and provide examples. How do your examples fit into the discussion of in-domain vs. out-of-domain? Can you think of a possible way to ensure a specific translation for a word is used by an NMT model?
+
+Neigung: Depending on the context, this word can mean "tendency," "inclination," "slope," or "disposition."
+Laufen: A very generic verb in German, which can be translated as "walk" or "run." It also has domain-specific translations, such as "being in progress" (e.g., "Die Aufnahme läuft" = "The recording is in progress"), "work" (e.g., "Der Motor läuft mit voller Kapazität" = "The motor works at full capacity"), and "go" (e.g., "Alles läuft nach Plan" = "Everything goes according to plan").
+Hausbank: This can either mean a bench belonging to a house or a trusted financial institution, which could be translated as "local bank" or "main bank."
+A model trained on data from a single domain will likely learn too narrow a representation of these words, leading to incorrect translations in an out-of-domain setting. For instance, a model trained on data related to motorsports might learn to translate "laufen" as "work," which would not make sense in most other contexts.
+
+To ensure specific translations, several strategies could be employed:
+
+Train the model on a large and diverse dataset from multiple domains so that it learns context-dependent translations.
+Train the model for a specific use case, such as translating legal documents, by using domain-specific text.
+Manipulate the model’s logit values so that domain-relevant words have higher probabilities of being generated, while non-relevant terms have lower probabilities.
+Provide the model with a dictionary that predefines certain translations.
 
