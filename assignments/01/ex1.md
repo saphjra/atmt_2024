@@ -85,7 +85,9 @@ assignments/01/baseline/infopankki_translations.p.txt \
 The BLEU score on the in-domain test set will be relatively high considering the model
 was trained on very little data. Take a look at the raw data sets. Which characteristics of
 the in-domain data could be responsible for a high BLEU score?
-In both the training and the validation set, the sentences are relatively short, which is beneficial for the BLEU, additionlly both contain a considerable amount of if sentences, whos structure the model probably learned to predict. 
+
+
+The sentences are relatively short, which is beneficial for achiving higher blue scores. Additionally, the in-domain dataset Is fairly consistent with its sentences structures, boiling down to mostly main sentences and You or proper Nouns as subjcet. When sentences structures are more compicated, they mostly are if sentences. Furthermore, the start of one Sentence is often repeteat in the next sentence.  All those points make it easier for the model to predict in-domain translation based on the same text source, without generalizing well to textual data from other sources. 
 
 
 • Compare the model’s performance on the in-domain test set vs. the out-of-domain test
